@@ -24,11 +24,16 @@ text-align:center;
 opacity:0;
 transform:scale(1.1);
 transition:all 0.6s ease;
+
+/* 🔥 IMPORTANT : empêche les pages invisibles de bloquer les clics */
+pointer-events:none;
+z-index:1;
 }
 
 .page.active{
 opacity:1;
 transform:scale(1);
+pointer-events:auto;
 }
 
 /* Names */
@@ -97,7 +102,7 @@ background:white;
 color:#ff4d6d;
 }
 
-/* Hearts (ne bloque pas les clics) */
+/* Hearts */
 #hearts{
 position:absolute;
 width:100%;
@@ -105,7 +110,8 @@ height:100%;
 top:0;
 left:0;
 overflow:hidden;
-pointer-events:none;   /* 🔥 CORRECTION */
+pointer-events:none;
+z-index:0;
 }
 
 .heart{
@@ -117,15 +123,4 @@ animation:float 6s linear infinite;
 @keyframes float{
 0%{transform:translateY(100vh);}
 100%{transform:translateY(-10vh);}
-}
-
-/* Empêche les cœurs de bloquer les clics */
-#hearts{
-pointer-events:none;
-z-index:0;
-}
-
-/* Les pages doivent être au-dessus */
-.page{
-z-index:1;
 }
