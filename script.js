@@ -1,7 +1,5 @@
-/* Attend que le HTML soit chargé */
 document.addEventListener("DOMContentLoaded", function () {
 
-/* Récupération des éléments */
 const playBtn = document.getElementById("playBtn");
 const nextBtn = document.getElementById("nextBtn");
 const yesBtn  = document.getElementById("yesBtn");
@@ -14,21 +12,13 @@ const page2 = document.getElementById("page2");
 const page3 = document.getElementById("page3");
 const heartsContainer = document.getElementById("hearts");
 
-/* Vérification sécurité */
-if(!playBtn || !nextBtn || !yesBtn){
-console.error("Un bouton est introuvable dans le HTML !");
-return;
-}
-
-/* Fonction navigation */
 function showPage(page){
 document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
 page.classList.add("active");
 }
 
-/* Bouton musique */
+/* Musique */
 playBtn.addEventListener("click", function(){
-
 if(loveSong.paused){
 loveSong.play();
 playBtn.textContent = "⏸ Pause";
@@ -36,28 +26,27 @@ playBtn.textContent = "⏸ Pause";
 loveSong.pause();
 playBtn.textContent = "▶ Jouer la Musique";
 }
-
 });
 
-/* Aller page 2 */
+/* Page 2 */
 nextBtn.addEventListener("click", function(){
 showPage(page2);
 });
 
-/* YES */
+/* Page 3 */
 yesBtn.addEventListener("click", function(){
 showPage(page3);
 startHearts();
 });
 
-/* NON qui s’échappe */
+/* Bouton NON qui fuit */
 noBtn.addEventListener("mouseenter", function(){
 noBtn.style.position="absolute";
 noBtn.style.left=Math.random()*80+"%";
 noBtn.style.top=Math.random()*80+"%";
 });
 
-/* Animation cœurs */
+/* Animation coeurs */
 function startHearts(){
 setInterval(()=>{
 const heart=document.createElement("div");
