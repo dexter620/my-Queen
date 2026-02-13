@@ -37,7 +37,6 @@ font-size:3.5rem;
 color:white;
 margin-bottom:10px;
 text-shadow:0 5px 20px rgba(0,0,0,0.3);
-animation:fadeIn 2s ease;
 }
 
 /* Date */
@@ -64,7 +63,7 @@ margin-bottom:25px;
 max-width:550px;
 }
 
-/* Love paragraph box */
+/* Message */
 .love-paragraph{
 line-height:1.8;
 background:rgba(255,255,255,0.15);
@@ -98,7 +97,7 @@ background:white;
 color:#ff4d6d;
 }
 
-/* Hearts */
+/* Hearts (ne bloque pas les clics) */
 #hearts{
 position:absolute;
 width:100%;
@@ -106,22 +105,16 @@ height:100%;
 top:0;
 left:0;
 overflow:hidden;
+pointer-events:none;   /* 🔥 CORRECTION */
 }
 
 .heart{
 position:absolute;
 color:#ff1e4d;
-font-size:24px;
 animation:float 6s linear infinite;
 }
 
-/* Animations */
 @keyframes float{
-0%{transform:translateY(100vh) scale(0.5);}
-100%{transform:translateY(-10vh) scale(1.2);}
-}
-
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
 }
