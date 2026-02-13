@@ -7,7 +7,6 @@ const noBtn   = document.getElementById("noBtn");
 
 const loveSong = document.getElementById("loveSong");
 
-const page1 = document.getElementById("page1");
 const page2 = document.getElementById("page2");
 const page3 = document.getElementById("page3");
 const heartsContainer = document.getElementById("hearts");
@@ -28,18 +27,18 @@ playBtn.textContent = "▶ Jouer la Musique";
 }
 });
 
-/* Page 2 */
+/* Aller page 2 */
 nextBtn.addEventListener("click", function(){
 showPage(page2);
 });
 
-/* Page 3 */
+/* YES */
 yesBtn.addEventListener("click", function(){
 showPage(page3);
 startHearts();
 });
 
-/* Bouton NON qui fuit */
+/* NON qui s’échappe */
 noBtn.addEventListener("mouseenter", function(){
 noBtn.style.position="absolute";
 noBtn.style.left=Math.random()*80+"%";
