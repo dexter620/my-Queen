@@ -118,3 +118,14 @@ animation:float 6s linear infinite;
 0%{transform:translateY(100vh);}
 100%{transform:translateY(-10vh);}
 }
+
+/* Empêche les cœurs de bloquer les clics */
+#hearts{
+pointer-events:none;
+z-index:0;
+}
+
+/* Les pages doivent être au-dessus */
+.page{
+z-index:1;
+}
